@@ -40,6 +40,27 @@
 					description="PLG_CONTENT_ICOMOON_FIELD_STYLE_DESC"
 					default=""
 					/>
+				<field
+					name="layout"
+					type="list"
+					label="PLG_CONTENT_ICOMOON_FIELD_LAYOUT_LABEL"
+					description="PLG_CONTENT_ICOMOON_FIELD_LAYOUT_DESC"
+					default="default"
+					>
+					<option value="default">JDEFAULT</option>
+					<option value="jdoc">PLG_CONTENT_ICOMOON_FIELD_LAYOUT_OPTION_DOCS</option>
+				</field>
+				<field
+						name="header"
+						type="radio"
+						label="PLG_CONTENT_ICOMOON_FIELD_HEADER_LABEL"
+						description="PLG_CONTENT_ICOMOON_FIELD_HEADER_DESC"
+						default="1"
+						class="btn-group btn-group-yesno"
+						>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

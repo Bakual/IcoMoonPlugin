@@ -61,7 +61,6 @@ class PlgContentIcomoon extends JPlugin
 
 		// Load file into an array
 		$lessArray = file($lessFile);
-		$output    = array();
 		$classes   = array();
 		$items     = array();
 		$cClasses  = 0;
@@ -83,48 +82,26 @@ class PlgContentIcomoon extends JPlugin
 			}
 		}
 
-		// Generate Output
-		if ($items)
+		// Nothing found
+		if (!$items)
 		{
-			$column   = 0;
-			$output[] = '<h4>I\'ve found ' . count($items) . ' icons defined for ' . $cClasses . ' classes</h4>';
-			$output[] = '<div class="icomoon-list"><div class="row-fluid">';
-			$columns  = $this->params->get('columns', 4, 'int');
-			$style    = $this->params->get('style');
-
-			if ($style)
-			{
-				JFactory::getDocument()->addStyleDeclaration($style);
-			}
-
-			foreach ($items as $item)
-			{
-				$column++;
-				$output[] = '<div class="icomoon-item span' . 12/$columns . '">';
-				$output[] = '<span class="icon-' . $item[0] . '"> </span>';
-				$output[] = '<ul class="unstyled">';
-
-				foreach ($item as $class)
-				{
-					$output[] = '<li>' . $class . '</li>';
-				}
-
-				$output[] = '</ul></div>';
-
-				if ($column == $columns)
-				{
-					$output[] = '</div><div class="row-fluid">';
-					$column   = 0;
-				}
-			}
-
-			$output[] = '</div></div>';
+			return;
 		}
+
+		$this->loadLanguage();
+
+		// Get the path for the layout file
+		$path = JPluginHelper::getLayoutPath('content', 'icomoon', $this->params->get('layout', 'default'));
+
+		// Render the output
+		ob_start();
+		include $path;
+		$output = ob_get_clean();
 
 		// Replace the tag with the content
 		foreach ($matches as $i => $match)
 		{
-			$article->text = str_replace($match[0], implode('', $output), $article->text);
+			$article->text = str_replace($match[0], $output, $article->text);
 		}
 	}
 }

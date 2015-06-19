@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_icomoon</name>
+	<author>Thomas Hunziker</author>
+	<creationDate>2015-06-19</creationDate>
+	<copyright>(C) 2015</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>admin@bakual.net</authorEmail>
+	<authorUrl>http://www.bakual.net</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_ICOMOON_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="icomoon">icomoon.php</filename>
+		<folder>language</folder>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="SermonSpeaker.net">http://www.sermonspeaker.net/update/PLG_CONTENT_ICOMOON.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="columns"
+					type="list"
+					label="PLG_CONTENT_ICOMOON_FIELD_COLUMNS_LABEL"
+					description="PLG_CONTENT_ICOMOON_FIELD_COLUMNS_DESC"
+					default="4"
+					>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="12">12</option>
+				</field>
+				<field
+					name="style"
+					type="textarea"
+					label="PLG_CONTENT_ICOMOON_FIELD_STYLE_LABEL"
+					description="PLG_CONTENT_ICOMOON_FIELD_STYLE_DESC"
+					default=""
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -20,10 +20,10 @@ if ($style)
 <?php if ($this->params->get('header')) : ?>
 	<h4 class="icomoon-header"><?php echo JText::sprintf('PLG_CONTENT_ICOMOON_HEADER', count($items), $cClasses); ?></h4>
 <?php endif; ?>
-<!-- Start JDocs Output -->
 <div class="icomoon-list">
+<!-- Start JDocs Output -->
 <?php foreach ($items as $item) : ?>
-<div class="small-4 columns"><span class="icon-<?php echo $item[0]; ?>">&nbsp;</span> <?php
+<div class="small-12 large-4 columns"><span class="icon-<?php echo $item[0]; ?>">&nbsp;</span>&nbsp; <?php
 foreach ($item as $i => $class)
 {
 	echo $class;
@@ -31,5 +31,5 @@ foreach ($item as $i => $class)
 }
 ?></div>
 <?php endforeach; ?>
-</div>
 <!-- End JDocs Output -->
+</div>

@@ -77,7 +77,7 @@ class PlgContentIcomoon extends JPlugin
 
 			if ($classes && (strpos($line, 'content:') !== false))
 			{
-				$items[] = $classes;
+				$items[$classes[0]] = $classes;
 				$classes = array();
 			}
 		}
@@ -86,6 +86,20 @@ class PlgContentIcomoon extends JPlugin
 		if (!$items)
 		{
 			return;
+		}
+
+		// Alpha Order
+		if ($this->params->get('order'))
+		{
+			ksort($items);
+
+			// Put 'Joomla' as first element
+			if (isset($items['joomla']))
+			{
+				$joomla = $items['joomla'];
+				unset($items['joomla']);
+				array_unshift($items, $joomla);
+			}
 		}
 
 		$this->loadLanguage();

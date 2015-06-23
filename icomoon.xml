@@ -12,6 +12,7 @@
 	<files>
 		<filename plugin="icomoon">icomoon.php</filename>
 		<folder>language</folder>
+		<folder>tmpl</folder>
 	</files>
 	<updateservers>
 		<server type="extension" priority="1" name="SermonSpeaker.net">http://www.sermonspeaker.net/update/PLG_CONTENT_ICOMOON.xml</server>
@@ -19,6 +20,17 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<field
+						name="header"
+						type="radio"
+						label="PLG_CONTENT_ICOMOON_FIELD_HEADER_LABEL"
+						description="PLG_CONTENT_ICOMOON_FIELD_HEADER_DESC"
+						default="1"
+						class="btn-group btn-group-yesno"
+						>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field
 					name="columns"
 					type="list"
@@ -34,11 +46,23 @@
 					<option value="12">12</option>
 				</field>
 				<field
+						name="order"
+						type="list"
+						label="PLG_CONTENT_ICOMOON_FIELD_ORDER_LABEL"
+						description="PLG_CONTENT_ICOMOON_FIELD_ORDER_DESC"
+						default="0"
+						class="btn-group btn-group-yesno"
+						>
+					<option value="0">JDEFAULT</option>
+					<option value="1">PLG_CONTENT_ICOMOON_FIELD_ORDER_OPTION_ALPHA</option>
+				</field>
+				<field
 					name="style"
 					type="textarea"
 					label="PLG_CONTENT_ICOMOON_FIELD_STYLE_LABEL"
 					description="PLG_CONTENT_ICOMOON_FIELD_STYLE_DESC"
 					default=""
+					rows="10"
 					/>
 				<field
 					name="layout"
@@ -49,17 +73,6 @@
 					>
 					<option value="default">JDEFAULT</option>
 					<option value="jdoc">PLG_CONTENT_ICOMOON_FIELD_LAYOUT_OPTION_DOCS</option>
-				</field>
-				<field
-					name="header"
-					type="radio"
-					label="PLG_CONTENT_ICOMOON_FIELD_HEADER_LABEL"
-					description="PLG_CONTENT_ICOMOON_FIELD_HEADER_DESC"
-					default="1"
-					class="btn-group btn-group-yesno"
-					>
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
 				</field>
 			</fieldset>
 		</fields>

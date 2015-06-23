@@ -2,12 +2,12 @@
 <extension version="3.4.0" type="plugin" group="content" method="upgrade">
 	<name>plg_content_icomoon</name>
 	<author>Thomas Hunziker</author>
-	<creationDate>2015-06-19</creationDate>
+	<creationDate>2015-06-23</creationDate>
 	<copyright>(C) 2015</copyright>
 	<license>http://www.gnu.org/licenses/gpl.html</license>
 	<authorEmail>admin@bakual.net</authorEmail>
 	<authorUrl>http://www.bakual.net</authorUrl>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<description>PLG_CONTENT_ICOMOON_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="icomoon">icomoon.php</filename>

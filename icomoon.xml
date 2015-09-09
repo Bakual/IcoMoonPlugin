@@ -14,9 +14,6 @@
 		<folder>language</folder>
 		<folder>tmpl</folder>
 	</files>
-	<updateservers>
-		<server type="extension" priority="1" name="SermonSpeaker.net">http://www.sermonspeaker.net/update/PLG_CONTENT_ICOMOON.xml</server>
-	</updateservers>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
